@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.chessfxfinalporjectversion2/com.example.chessfxfinalporjectversion2.HelloApplication
+                                com.example.chessfxfinalporjectversion2/com.example.chessfxfinalporjectversion2.MainApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
