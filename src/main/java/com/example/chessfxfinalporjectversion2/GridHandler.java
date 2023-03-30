@@ -14,7 +14,7 @@ public class GridHandler {
 
     public GridHandler(Group root) {
         System.out.println("Board Generated");
-        int controlSize = 70;
+        int controlSize = 100;
 
         for (int file = 0; file < 8; ++file) {
             for (int rank = 0; rank < 8; ++rank) {
@@ -26,7 +26,7 @@ public class GridHandler {
 
                 Rectangle rec = new Rectangle();
                 rec.setX((double) (file * controlSize + 100));
-                rec.setY((double) (rank * controlSize + 80));
+                rec.setY((double) (rank * controlSize + 100));
                 rec.setWidth((double) controlSize);
                 rec.setHeight((double) controlSize);
                 rec.setFill(color);

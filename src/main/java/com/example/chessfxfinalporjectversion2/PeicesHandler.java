@@ -6,7 +6,7 @@ public class PeicesHandler{
     Group root;
     public PeicesHandler(Group root){
         this.root = root;
-        Pawn pawn = new Pawn(root);
+        Pawn pawn = new Pawn(root, 100,200,200 );
 
     }
 
