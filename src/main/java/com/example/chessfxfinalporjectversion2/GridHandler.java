@@ -12,9 +12,7 @@ public class GridHandler {
 
 
 
-    public GridHandler(Group root, Stage primaryStage) {
-        primaryStage.setX(20.0);
-        primaryStage.setY(200.0);
+    public GridHandler(Group root) {
         System.out.println("Board Generated");
         int controlSize = 70;
 
