@@ -18,8 +18,8 @@ public class DraggableMakerGrid extends GridBase{
                 mouseAnchorX = mouseEvent.getSceneX();
                 mouseAnchorY = mouseEvent.getSceneY();
 
-                int x = (int) ((mouseAnchorX/getControlSize()) % 8) * getControlSize();
-                int y = (int) ((mouseAnchorY/getControlSize()) % 8) * getControlSize();
+                int x = (int) ((mouseAnchorX/getControlSize()) % getFile()) * getControlSize();
+                int y = (int) ((mouseAnchorY/getControlSize()) % getRank()) * getControlSize();
 
                 node.setLayoutX(x);
                 node.setLayoutY(y);
@@ -37,8 +37,8 @@ public class DraggableMakerGrid extends GridBase{
             mouseAnchorX = mouseEvent.getSceneX();
             mouseAnchorY = mouseEvent.getSceneY();
 
-            int x = (int) ((mouseAnchorX/getControlSize()) % 8) * getControlSize();
-            int y = (int) ((mouseAnchorY/getControlSize()) % 8) * getControlSize();
+            int x = (int) ((mouseAnchorX/getControlSize()) % getFile()) * getControlSize();
+            int y = (int) ((mouseAnchorY/getControlSize()) % getRank()) * getControlSize();
 
             node.setLayoutX(x - peicesComponents.getStartPositionX());
             node.setLayoutY(y - peicesComponents.getStartPositionY());

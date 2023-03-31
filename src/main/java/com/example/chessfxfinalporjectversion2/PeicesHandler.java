@@ -7,11 +7,11 @@ public class PeicesHandler{
 
 
 
-    public PeicesHandler(AnchorPane pane, int controlSize, DraggableMaker draggableMaker){
+    public PeicesHandler(AnchorPane pane, int controlSize, DraggableMaker draggableMaker, DraggableMakerGrid draggableMakerGrid){
         LocatePeices locatePeices = new LocatePeices();
 
 
-        Pawn pawn = new Pawn(pane, controlSize, locatePeices.getPawnX(), locatePeices.getPawnY(), draggableMaker);
+        Pawn pawn = new Pawn(pane, controlSize, locatePeices.getPawnX(), locatePeices.getPawnY(), draggableMaker, draggableMakerGrid);
 
 
 

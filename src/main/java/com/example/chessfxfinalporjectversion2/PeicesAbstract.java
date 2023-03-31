@@ -1,5 +1,6 @@
 package com.example.chessfxfinalporjectversion2;
 
+import javafx.fxml.FXML;
 import javafx.scene.shape.Rectangle;
 
 import java.util.concurrent.RecursiveTask;
@@ -12,6 +13,9 @@ public abstract class PeicesAbstract {
 
     private int size;
     private String name;
+
+//    @FXML
+//    public abstract void generateImage();
 
 
     public abstract int getPositionX();

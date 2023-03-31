@@ -19,6 +19,7 @@ public class GridHandler extends GridBase {
     }
 
     public void updateGrid() {
+        Group root = new Group();
         System.out.println("Board Generated");
 
 
@@ -36,7 +37,12 @@ public class GridHandler extends GridBase {
                 rec.setWidth((double) getControlSize());
                 rec.setHeight((double) getControlSize());
                 rec.setFill(color);
+
                 getAnchorPane().getChildren().add(rec);
+
+
+
+
 
             }
         }

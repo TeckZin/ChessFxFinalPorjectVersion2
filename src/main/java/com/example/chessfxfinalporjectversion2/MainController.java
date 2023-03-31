@@ -26,7 +26,7 @@ public class MainController implements Initializable {
 
 
      private DraggableMakerGrid gridMaker2;
-
+     @Override
      public void initialize(URL url, ResourceBundle resourceBundle){
 
 
@@ -37,7 +37,7 @@ public class MainController implements Initializable {
           gridHandler = new GridHandler(controlSize, file, rank,pane);
           gridHandler.updateGrid();
 
-          PeicesHandler peicesHandler = new PeicesHandler(pane, controlSize, draggableMaker);
+          PeicesHandler peicesHandler = new PeicesHandler(pane, controlSize, draggableMaker, draggableMakerGrid);
 
 
 

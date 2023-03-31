@@ -10,7 +10,7 @@ public class PeicesComponents {
     private int startPositionX;
 
     public PeicesComponents(int size, int startPositionX, int startPositionY){
-        Color color = Color.web("#FF0000");
+        Color color = Color.web("#18B3BB");
 
         this.startPositionX = startPositionX;
         this.startPositionY = startPositionY;
