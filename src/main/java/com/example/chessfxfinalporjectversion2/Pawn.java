@@ -1,31 +1,33 @@
 package com.example.chessfxfinalporjectversion2;
 
 
-import javafx.scene.Group;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 
 public class Pawn extends PeicesAbstract {
 
 
-
+    private Rectangle rectangle;
     private int positionX;
     private int positionY;
 
-    private int size;
+    private int controlSize;
     private String name = "pawn";
 
 
-    public Pawn(Group root, int size, int positionX, int positionY){
+    public Pawn(AnchorPane pane, int controlSize, int positionX, int positionY, DraggableMaker draggableMaker){
         setPositionX(positionX);
         setPositionY(positionY);
-        setSize(size);
+        setControlSize(controlSize);
 
-        PeicesMethod peice = new PeicesMethod(size,positionX,positionY);
 
-        Rectangle rec = peice.getRectangle();
 
-        root.getChildren().add(rec);
 
+        PeicesComponents peicesComponents = new PeicesComponents(controlSize, positionX, positionY);
+        pane.getChildren().add(peicesComponents.getRectangle());
+
+
+        draggableMaker.makeDraggable(peicesComponents.getRectangle());
 
 
 
@@ -43,8 +45,8 @@ public class Pawn extends PeicesAbstract {
     }
 
     @Override
-    public int getSize() {
-        return size;
+    public int getControlSize() {
+        return controlSize;
     }
 
     @Override
@@ -60,8 +62,8 @@ public class Pawn extends PeicesAbstract {
     }
 
     @Override
-    public void setSize(int size) {
-        this.size = size;
+    public void setControlSize(int controlSize) {
+        this.controlSize = controlSize;
 
     }
 
@@ -74,4 +76,16 @@ public class Pawn extends PeicesAbstract {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public void getRectangle() {
+
+    }
+
+    @Override
+    public Rectangle setRectangle() {
+        return rectangle;
+    }
+
+
 }

@@ -3,13 +3,13 @@ package com.example.chessfxfinalporjectversion2;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class PeicesMethod {
+public class PeicesComponents {
 
     private Rectangle rectangle;
     private int startPositionY;
     private int startPositionX;
 
-    public PeicesMethod(int size, int startPositionX, int startPositionY){
+    public PeicesComponents(int size, int startPositionX, int startPositionY){
         Color color = Color.web("#FF0000");
 
         this.startPositionX = startPositionX;
