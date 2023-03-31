@@ -3,6 +3,8 @@ package com.example.chessfxfinalporjectversion2;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 
+import java.nio.channels.Pipe;
+
 public class PeicesHandler {
 
     private AnchorPane pane;
@@ -37,9 +39,14 @@ public class PeicesHandler {
 
     }
 
+    public PeicesHandler(){
+        System.out.println("Admin Access");
+
+    }
+
 
     public void loadDefaulStartPosition(){
-        System.out.println("Loading Deafault Start  Position");
+        System.out.println("Loading Deafault Start Position");
 
 
         for (int i = 0; i <= 7; i++){
@@ -71,7 +78,7 @@ public class PeicesHandler {
 //        Queen queen = new Queen(pane, controlSize, locatePeices.getQueenX(), locatePeices.getQueenY(), draggableMaker, draggableMakerGrid, 0);
 //
 
-
+        System.out.println("Load competed");
 
     }
 
