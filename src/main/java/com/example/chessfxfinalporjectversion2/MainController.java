@@ -17,10 +17,14 @@ public class MainController implements Initializable {
      @FXML
      private AnchorPane pane;
 
+
+
      private GridHandler gridHandler;
 
      private DraggableMakerGrid draggableMakerGrid;
      private DraggableMaker draggableMaker = new DraggableMaker();
+     private String FEN = "123";
+
 
 
 
@@ -37,8 +41,8 @@ public class MainController implements Initializable {
           gridHandler = new GridHandler(controlSize, file, rank,pane);
           gridHandler.updateGrid();
 
-          PeicesHandler peicesHandler = new PeicesHandler(pane, controlSize, draggableMaker, draggableMakerGrid);
 
+          PeicesHandler peicesHandler = new PeicesHandler(pane, controlSize, draggableMaker, draggableMakerGrid, FEN);
 
 
 

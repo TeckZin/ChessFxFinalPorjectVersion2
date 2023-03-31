@@ -1,34 +1,20 @@
 package com.example.chessfxfinalporjectversion2;
 
-
-import javafx.fxml.FXML;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 
-import java.util.concurrent.RecursiveAction;
-
-public class Pawn extends PeicesAbstract {
-
+public class Queen extends PeicesAbstract {
 
     private Rectangle rectangle;
     private int positionX;
     private int positionY;
 
     private int controlSize;
-    private String name = "Pawn";
 
     private Color color;
-
-
-
-
-    public Pawn(AnchorPane pane, int controlSize, int positionX, int positionY, DraggableMaker draggableMaker, DraggableMakerGrid draggableMakerGrid,int colorBit, Color color){
+    private String name = "queen";
+    public Queen(AnchorPane pane, int controlSize, int positionX, int positionY, DraggableMaker draggableMaker, DraggableMakerGrid draggableMakerGrid, int colorBit, Color color) {
         Color textColor = Color.web("#000000");
 
         setPositionX(positionX);
@@ -47,10 +33,10 @@ public class Pawn extends PeicesAbstract {
 
 
         PeicesComponents peicesComponents = new PeicesComponents(controlSize, positionX, positionY);
+        this.rectangle = peicesComponents.getRectangle();
 
 
-
-        peicesComponents.getRectangle().setFill(color);
+        rectangle.setFill(color);
         pane.getChildren().add(peicesComponents.getRectangle());
 
 
@@ -60,20 +46,7 @@ public class Pawn extends PeicesAbstract {
         draggableMakerGrid.makeDraggable(peicesComponents);
         draggableMaker.makeDraggable(peicesComponents.getRectangle());
 
-
-
-
-
-
-
     }
-
-//    @FXML
-//    public void generatedImage(){
-//        Image img = new Image("");
-//        rectangle.setFill(new ImagePattern(img));
-//    }
-
 
     @Override
     public int getPositionX() {
