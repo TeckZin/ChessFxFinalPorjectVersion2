@@ -27,7 +27,7 @@ public class MainController implements Initializable {
 
      private DraggableMakerGrid draggableMakerGrid;
      private DraggableMaker draggableMaker = new DraggableMaker();
-     private String FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+     private String FEN = "r1b1kbnr/pppp2pp/2n1P3/4NP2/1PB4q/2P5/P4PPP/RNBQK2R b KQkq - 0 1";
 
      private PeicesHandler peicesHandler;
 
@@ -64,6 +64,11 @@ public class MainController implements Initializable {
           peicesHandler.loadDefaulStartPosition();
 
 
+     }
+
+     @FXML
+     protected void onResetFEN(){
+          peicesHandler.fenConverter(FEN);
      }
 
 

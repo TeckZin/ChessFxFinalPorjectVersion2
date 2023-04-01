@@ -50,7 +50,7 @@ public class PeicesHandler {
         this.draggableMaker = draggableMaker;
         this.draggableMakerGrid = draggableMakerGrid;
         this.FEN = FEN;
-        fenConverter();
+        fenConverter(FEN);
 
 
 
@@ -66,48 +66,81 @@ public class PeicesHandler {
 
     }
     // https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
-    private void fenConverter(){
+    public void fenConverter(String FEN){
         System.out.println("Loading Fen Peices......");
         System.out.printf("FEN STRING --> <%s>", FEN);
         System.out.println("-------------------------------");
-        boolean beforeIsLetter = false;
+
         int fenLength = FEN.length();
         System.out.printf("\033[4;35mStarting LOOP%n\033[0m");
+        boolean newRank = true ;
+        boolean emptyFirstFile = false;
         for(int i = 0; i < fenLength; i++){
 
 
             char fenCharacter = FEN.charAt(i);
             System.out.printf("\033[0;36mCurrecnt Character: <%c>%n\033[0m", fenCharacter);
+            System.out.printf("\033[0;36mNewRank: <%b>, emptyFirstFile <%b>%n\033[0m", newRank, emptyFirstFile);
+
             if(fenCharacter == ' '){
                 System.out.println("\033[4;31mSpace dected porgram break\033[0m");
                 break;
             } else if (fenCharacter == '/'){
-                beforeIsLetter = false;
-                System.out.printf("\033[0;33mGenerating new line%n\033[0m");
+
+                System.out.printf("\033[0;33mGenerating new line </>Current Rank <%d> %n\033[0m", rank+1);
                 rank++;
+                newRank = true;
                 file = 0;
             } else if(Character.isDigit(fenCharacter)){
-                beforeIsLetter = false;
-                int xAxis = Integer.parseInt(String.valueOf(fenCharacter));
-                System.out.printf("\033[0;32m" + "Adding xAxis: <%d> to file <%d> = <%d>%n\033[0m", xAxis, file, file + xAxis);
-                file += xAxis;
-            }else if(Character.isAlphabetic(fenCharacter)){
-                if(beforeIsLetter){
-                    file++;
+
+                if (newRank){
+                  emptyFirstFile = true;
                 }
+                newRank = false;
+                int xAxis = Integer.parseInt(String.valueOf(fenCharacter));
+
+                if(xAxis == 8){
+                   continue;
+                } else {
+                    System.out.printf("\033[0;32m" + "Adding xAxis: <%d> to file <%d> = <%d>%n\033[0m", xAxis, file, file + xAxis);
+                    file += xAxis;
+
+
+                }
+            }else if(Character.isAlphabetic(fenCharacter)){
+
+                if(!newRank){
+
+                    file++;
+
+                    System.out.printf("\033[0;34mAdded one to file <%d>%n\033[0m", file);
+                }
+                if(emptyFirstFile){
+                    file--;
+                    System.out.printf("\033[0;34mTook one away form file <%d>%n\033[0m", file);
+                    emptyFirstFile = false;
+                }
+
+
+
                 if(Character.isUpperCase(fenCharacter)){ //white == 1, black == 0
                     loadPeice(1, fenCharacter);
-                    beforeIsLetter = true;
+                    newRank = false;
+
                 } else {
                     loadPeice(0, fenCharacter);
-                    beforeIsLetter = true;
+                    newRank = false;
+
                 }
             }
 
             if(rank == 8){
                 System.out.println("\033[4;31mRank is 8 Break\033[0m");
+                newRank = false;
+
                 break;
             }
+
         }
         System.out.println("Completed Loading Fen Peices");
 
