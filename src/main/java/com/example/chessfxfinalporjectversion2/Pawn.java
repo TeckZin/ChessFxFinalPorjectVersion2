@@ -1,19 +1,13 @@
 package com.example.chessfxfinalporjectversion2;
 
 
-import javafx.fxml.FXML;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-
-import java.util.concurrent.RecursiveAction;
 
 public class Pawn extends PeicesAbstract {
+
+
 
 
     private Rectangle rectangle;
@@ -24,6 +18,8 @@ public class Pawn extends PeicesAbstract {
     private String name = "Pawn";
 
     private Color color;
+
+
 
 
 
@@ -46,20 +42,20 @@ public class Pawn extends PeicesAbstract {
 
 
 
+
         PeicesComponents peicesComponents = new PeicesComponents(controlSize, positionX, positionY);
+        this.rectangle = peicesComponents.getRectangle();
 
 
-
-        peicesComponents.getRectangle().setFill(color);
-        pane.getChildren().add(peicesComponents.getRectangle());
+        rectangle.setFill(color);
+        pane.getChildren().add(rectangle);
 
 
 
 
 
         draggableMakerGrid.makeDraggable(peicesComponents);
-        draggableMaker.makeDraggable(peicesComponents.getRectangle());
-
+        draggableMaker.makeDraggable(rectangle);
 
 
 
@@ -119,13 +115,14 @@ public class Pawn extends PeicesAbstract {
     }
 
     @Override
-    public void getRectangle() {
+    public Rectangle getRectangle() {
 
+        return rectangle;
     }
 
     @Override
-    public Rectangle setRectangle() {
-        return rectangle;
+    public void setRectangle(Rectangle rectangle) {
+        this.rectangle = rectangle;
     }
 
     @Override

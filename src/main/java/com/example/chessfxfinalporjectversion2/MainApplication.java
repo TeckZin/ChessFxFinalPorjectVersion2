@@ -24,7 +24,7 @@ public class MainApplication extends javafx.application.Application {
 
 
 
-        System.out.println("Game Launch");
+        System.out.println("\033[1;92mGAME LAUNCH\033[0m");
 
 
 

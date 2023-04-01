@@ -11,8 +11,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class MainController implements Initializable {
+     private Scanner sc;
 
      private int controlSize = 100;
      private int file = 8;
@@ -38,7 +40,7 @@ public class MainController implements Initializable {
      private DraggableMakerGrid gridMaker2;
      @Override
      public void initialize(URL url, ResourceBundle resourceBundle){
-
+          sc = new Scanner(System.in);
 
 
           draggableMakerGrid = new DraggableMakerGrid(controlSize, file,rank,pane);
@@ -72,7 +74,15 @@ public class MainController implements Initializable {
      }
 
 
-
+     @FXML
+     protected void onInputFen(){
+          System.out.println("---------------------------------------");
+          System.out.println("\033[0;107m\033[1;37mSCANNER GENERATED");
+          System.out.print("\033[0;34mEnter FEN: ");
+          this.FEN = sc.nextLine();
+          System.out.println("\033[0;32mFEN LOADED IN\033[0m");
+          System.out.println("---------------------------------------");
+     }
 
 
 

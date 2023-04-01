@@ -18,6 +18,8 @@ public class PeicesComponents {
         rectangle = new Rectangle(startPositionX, startPositionY, size, size);
         rectangle.setFill(color);
 
+
+
     }
 
     public Rectangle getRectangle(){

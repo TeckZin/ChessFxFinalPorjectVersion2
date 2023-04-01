@@ -21,7 +21,8 @@ public class GridHandler extends GridBase {
 
     public void updateGrid() {
 
-        System.out.println("Board Generated");
+        System.out.println("\033[1;92mGENERATING BROAD\033[0m");
+
 
 
         for (int file = 0; file < getFile(); ++file) {
@@ -49,6 +50,9 @@ public class GridHandler extends GridBase {
 
             }
         }
+
+        System.out.println("\033[1;92mBOARD GENERATION COMPLETE\033[0m");
+        System.out.println("-------------------------------------------");
 
     }
 }

@@ -37,14 +37,14 @@ public class Bishop extends PeicesAbstract {
 
 
         rectangle.setFill(color);
-        pane.getChildren().add(peicesComponents.getRectangle());
+        pane.getChildren().add(rectangle);
 
 
 
 
 
         draggableMakerGrid.makeDraggable(peicesComponents);
-        draggableMaker.makeDraggable(peicesComponents.getRectangle());
+        draggableMaker.makeDraggable(rectangle);
 
     }
 
@@ -92,13 +92,14 @@ public class Bishop extends PeicesAbstract {
     }
 
     @Override
-    public void getRectangle() {
+    public Rectangle getRectangle() {
 
+        return rectangle;
     }
 
     @Override
-    public Rectangle setRectangle() {
-        return rectangle;
+    public void setRectangle(Rectangle rectangle) {
+        this.rectangle = rectangle;
     }
 
     @Override

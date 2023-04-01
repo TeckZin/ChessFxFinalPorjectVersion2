@@ -1,10 +1,9 @@
 package com.example.chessfxfinalporjectversion2;
 
-import javafx.fxml.FXML;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-import java.util.concurrent.RecursiveTask;
+import java.util.concurrent.RecursiveAction;
 
 public abstract class PeicesAbstract {
 
@@ -34,8 +33,8 @@ public abstract class PeicesAbstract {
 
     public abstract void setName(String name);
 
-    public abstract void getRectangle();
-    public abstract Rectangle setRectangle();
+    public abstract Rectangle getRectangle();
+    public abstract void setRectangle(Rectangle rectangle);
 
     public abstract Color getColor();
 
