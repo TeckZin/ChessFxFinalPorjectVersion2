@@ -1,15 +1,11 @@
 package com.example.chessfxfinalporjectversion2;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -29,12 +25,12 @@ public class MainController implements Initializable {
 
      private DraggableMakerGrid draggableMakerGrid;
      private DraggableMaker draggableMaker = new DraggableMaker();
-     private String FEN = "r1b1kbnr/pppp2pp/2n1P3/4NP2/1PB4q/2P5/P4PPP/RNBQK2R b KQkq - 0 1";
+     private String FEN = "rnbqkb1r/ppp1p1pp/3p1n2/5p2/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 1";
 
-     private PeicesHandler peicesHandler;
+     private PeicesHandler piecesHandler;
 
 
-
+     private ArrayList<Object> piecesOnBoard;
 
 
      private DraggableMakerGrid gridMaker2;
@@ -50,27 +46,29 @@ public class MainController implements Initializable {
           gridHandler.updateGrid();
 
 
-          peicesHandler = new PeicesHandler(pane, controlSize, draggableMaker, draggableMakerGrid, FEN);
+          piecesHandler = new PeicesHandler(pane, controlSize, draggableMaker, draggableMakerGrid, FEN);
+          piecesOnBoard = piecesHandler.getPeicesOnBoard();
 
+          Locater locater = new Locater(piecesOnBoard);
 
      }
      //<AnchorPane fx:id="pane" layoutX="100.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="805.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessfxfinalporjectversion2.MainController" />
 
 
-     public PeicesHandler getPeicesHandler(){
-          return peicesHandler;
+     public PeicesHandler getPiecesHandler(){
+          return piecesHandler;
      }
 
      @FXML
      protected void onResetDefault(){
-          peicesHandler.loadDefaulStartPosition();
+          piecesHandler.loadDefaulStartPosition();
 
 
      }
 
      @FXML
      protected void onResetFEN(){
-          peicesHandler.fenConverter(FEN);
+          piecesHandler.fenConverter(FEN);
      }
 
 

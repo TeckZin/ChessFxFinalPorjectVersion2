@@ -46,6 +46,9 @@ public class Bishop extends PeicesAbstract {
         draggableMakerGrid.makeDraggable(peicesComponents);
         draggableMaker.makeDraggable(rectangle);
 
+        Interactions interactions = new Interactions();
+        interactions.isBeingDrag(rectangle);
+
     }
 
     @Override

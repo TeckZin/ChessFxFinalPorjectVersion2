@@ -2,6 +2,7 @@ package com.example.chessfxfinalporjectversion2;
 
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Rectangle;
 
 public class DraggableMaker {
     private double mouseAnchorX;
@@ -15,12 +16,13 @@ public class DraggableMaker {
         });
 
         node.setOnMouseDragged(mouseEvent -> {
+
             node.setLayoutX(mouseEvent.getSceneX() - mouseAnchorX - 100);
             node.setLayoutY(mouseEvent.getSceneY() - mouseAnchorY - 100);
-            if(mouseEvent.getX() > 800){
-                mouseEvent.consume();
-            }
+
         });
+
+
 
     }
 

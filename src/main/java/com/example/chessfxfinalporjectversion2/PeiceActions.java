@@ -1,9 +1,11 @@
 package com.example.chessfxfinalporjectversion2;
 
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 
 public class PeiceActions {
-    String name;
+    private String name;
+    private Rectangle rectangle;
     private AnchorPane pane;
     private Object o;
     private Pawn pawn;
@@ -21,25 +23,10 @@ public class PeiceActions {
     }
 
     public void peiceRemovel(){
-        if(name.equals(pawn.getName())){
-            pawn = (Pawn) o;
-            pane.getChildren().remove(pawn.getRectangle());
-        }else if (name.equals(rook.getName())){
-            rook = (Rook) o;
-            pane.getChildren().remove(rook.getRectangle());
-        }else if (name.equals(knight.getName())){
-            knight = (Knight) o;
-            pane.getChildren().remove(knight.getRectangle());
-        }else if (name.equals(bishop.getName())){
-            bishop = (Bishop) o;
-            pane.getChildren().remove(bishop.getRectangle());
-        }else if (name.equals(king.getName())){
-            king = (King) o;
-            pane.getChildren().remove(king.getRectangle());
-        }else if (name.equals(queen.getName())) {
-            queen = (Queen) o;
-            pane.getChildren().remove(queen.getRectangle());
-        }
+      Interactions interactions = new Interactions();
+      rectangle = interactions.getRectangleObject(o);
+      pane.getChildren().remove(rectangle);
+
 
     }
 }

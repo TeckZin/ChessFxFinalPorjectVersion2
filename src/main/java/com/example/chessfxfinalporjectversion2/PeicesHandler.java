@@ -1,5 +1,6 @@
 package com.example.chessfxfinalporjectversion2;
 
+import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 
@@ -28,6 +29,8 @@ public class PeicesHandler {
     private int bishopY;
     private int kingY;
     private int queenY;
+
+
 
     private ArrayList<Object> peicesOnBoard = new ArrayList<Object>();
 
@@ -60,18 +63,9 @@ public class PeicesHandler {
         fenConverter(FEN);
 
 
-
-
-
-
-
-
-
-
-
-
-
     }
+
+
     // https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
     public void fenConverter(String FEN){
 
@@ -262,6 +256,10 @@ public class PeicesHandler {
     }
 
 
+
+    public ArrayList<Object> getPeicesOnBoard() {
+        return peicesOnBoard;
+    }
     public PeicesHandler(){
         System.out.println("Admin Access");
 
