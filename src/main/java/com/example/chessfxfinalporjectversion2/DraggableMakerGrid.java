@@ -4,12 +4,12 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 
-public class DraggableMakerGrid extends GridBase{
+public class DraggableMakerGrid extends GridBase {
 
         private double mouseAnchorX;
         private double mouseAnchorY;
 
-        public DraggableMakerGrid(int controlSize, int file, int rank, AnchorPane anchorPane){
+        public DraggableMakerGrid(int controlSize, int file, int rank, AnchorPane anchorPane) {
             super(controlSize, file, rank, anchorPane);
 
         }

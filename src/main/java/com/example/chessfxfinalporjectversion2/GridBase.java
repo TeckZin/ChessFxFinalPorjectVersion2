@@ -3,7 +3,7 @@ package com.example.chessfxfinalporjectversion2;
 import javafx.geometry.Insets;
 import javafx.scene.layout.AnchorPane;
 
-public class GridBase {
+public class GridBase implements GridInterface {
     private int controlSize;
     private int file;
     private int rank;
