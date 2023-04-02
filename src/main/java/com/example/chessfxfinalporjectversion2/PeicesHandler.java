@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 import java.nio.channels.Pipe;
 import java.util.ArrayList;
 
-public class PeicesHandler {
+public class PeicesHandler implements GridInterface{
 
     private AnchorPane pane;
     private int controlSize;
