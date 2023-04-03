@@ -3,6 +3,8 @@ package com.example.chessfxfinalporjectversion2;
 
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -13,7 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MainApplication extends javafx.application.Application {
+public class MainApplication extends javafx.application.Application{
 
 
     @Override
@@ -22,10 +24,7 @@ public class MainApplication extends javafx.application.Application {
         Color color = Color.web("#676767");
 
 
-
-
         System.out.println("\033[1;92mGAME LAUNCH\033[0m");
-
 
 
         Scene scene = new Scene(fxmlLoader.load());
@@ -43,11 +42,12 @@ public class MainApplication extends javafx.application.Application {
         loadAdminControl();
 
 
-
     }
 
-    public void loadAdminControl(){
-        try{
+
+
+    public void loadAdminControl() {
+        try {
             FXMLLoader adminFxmlLoader = new FXMLLoader(getClass().getResource("Admin.fxml"));
             Parent root1 = (Parent) adminFxmlLoader.load();
             Stage stage = new Stage();
@@ -59,15 +59,15 @@ public class MainApplication extends javafx.application.Application {
             stage.setTitle("Admin Control");
             stage.setScene(scene);
             stage.show();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println(e.getMessage());
         }
 
     }
 
 
-
     public static void main(String[] args) {
         launch();
     }
 }
+

@@ -25,7 +25,7 @@ public class Pawn extends PeicesAbstract {
 
 
     public Pawn(AnchorPane pane, int controlSize, int positionX, int positionY, DraggableMaker draggableMaker, DraggableMakerGrid draggableMakerGrid,int colorBit, Color color){
-        Color textColor = Color.web("#000000");
+
 
         setPositionX(positionX);
         setPositionY(positionY);
@@ -43,29 +43,29 @@ public class Pawn extends PeicesAbstract {
 
 
 
+
+
+
+
+
         PeicesComponents peicesComponents = new PeicesComponents(controlSize, positionX, positionY);
         this.rectangle = peicesComponents.getRectangle();
-
-
-        rectangle.setFill(color);
-        pane.getChildren().add(rectangle);
-
-
 
 
 
         draggableMakerGrid.makeDraggable(peicesComponents);
         draggableMaker.makeDraggable(rectangle);
 
-        Interactions interactions = new Interactions();
-        interactions.isBeingDrag(rectangle);
 
+        pane.getChildren().add(rectangle);
 
 
 
 
 
     }
+
+
 
 //    @FXML
 //    public void generatedImage(){

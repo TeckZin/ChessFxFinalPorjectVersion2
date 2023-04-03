@@ -177,9 +177,15 @@ public class PeicesHandler implements GridInterface{
            setPawnX((file)*100);
            setPawnY((rank)*100);
 
+
+
+
            pawn = new Pawn(pane, controlSize, getPawnX(), getPawnY()
                    , draggableMaker, draggableMakerGrid,
                    colorBit, Color.web("#5EC4BD"));
+
+
+
 
            peicesOnBoard.add(pawn);
         } else if (fenCharacter == 'r'){

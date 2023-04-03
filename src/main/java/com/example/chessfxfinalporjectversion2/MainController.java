@@ -25,7 +25,7 @@ public class MainController implements Initializable {
 
      private DraggableMakerGrid draggableMakerGrid;
      private DraggableMaker draggableMaker = new DraggableMaker();
-     private String FEN = "rnbqkb1r/ppp1p1pp/3p1n2/5p2/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 1";
+     private String FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
      private PeicesHandler piecesHandler;
 
@@ -50,6 +50,9 @@ public class MainController implements Initializable {
           piecesOnBoard = piecesHandler.getPeicesOnBoard();
 
           Locater locater = new Locater(piecesOnBoard);
+
+          Interactions interactions = new Interactions();
+          interactions.addEventHandlers(pane);
 
      }
      //<AnchorPane fx:id="pane" layoutX="100.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="805.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessfxfinalporjectversion2.MainController" />

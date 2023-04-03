@@ -46,8 +46,7 @@ public class King extends PeicesAbstract {
         draggableMakerGrid.makeDraggable(peicesComponents);
         draggableMaker.makeDraggable(rectangle);
 
-        Interactions interactions = new Interactions();
-        interactions.isBeingDrag(rectangle);
+
 
     }
 

@@ -47,6 +47,9 @@ public class DraggableMakerGrid extends GridBase implements GridInterface{
             node.setLayoutY(y - peicesComponents.getStartPositionY());
 
 
+
+
+
         });
 
 
