@@ -63,10 +63,19 @@ public class Interactions {
         pane.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                System.out.println("Working");
+
 
                 EventTarget target = mouseEvent.getTarget();
-                System.out.println(target.toString());
+                try{
+                    System.out.println("Working");
+                    Rectangle rectangle =  (Rectangle) target;
+
+                    System.out.println(rectangle.getId());
+
+
+                } catch (Exception e){
+                    System.out.println("AnchorPane");
+                }
 
             }
         });

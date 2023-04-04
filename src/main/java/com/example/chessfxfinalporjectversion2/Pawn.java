@@ -71,6 +71,8 @@ public class Pawn extends PeicesAbstract {
 
     }
 
+    public Pawn(){}
+
 
 
 //    @FXML
