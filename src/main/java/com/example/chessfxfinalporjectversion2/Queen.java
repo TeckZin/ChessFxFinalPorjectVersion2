@@ -9,13 +9,16 @@ public class Queen extends PeicesAbstract {
     private Rectangle rectangle;
     private int positionX;
     private int positionY;
+    private int tempX;
+    private int tempY;
 
     private int controlSize;
 
     private Color color;
     private String name = "queen";
     public Queen(AnchorPane pane, int controlSize, int positionX, int positionY, DraggableMaker draggableMaker, DraggableMakerGrid draggableMakerGrid, int colorBit, Color color) {
-        Color textColor = Color.web("#000000");
+        setTempX(positionX);
+        setTempY(positionY);
 
         setPositionX(positionX);
         setPositionY(positionY);
@@ -113,6 +116,27 @@ public class Queen extends PeicesAbstract {
         this.color = color;
 
     }
+    @Override
+    public void setTempX(int x) {
+        this.tempX = x;
+
+    }
+
+    @Override
+    public void setTempY(int y) {
+        this.tempY = y;
+    }
+
+    @Override
+    public int getTempX() {
+        return tempX;
+    }
+
+    @Override
+    public int getTempY() {
+        return tempY;
+    }
+
 
 
 

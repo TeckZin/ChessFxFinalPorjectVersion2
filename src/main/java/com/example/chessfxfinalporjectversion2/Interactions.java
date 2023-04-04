@@ -67,7 +67,7 @@ public class Interactions {
 
                 EventTarget target = mouseEvent.getTarget();
                 System.out.println(target.toString());
-                
+
             }
         });
 

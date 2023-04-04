@@ -11,6 +11,9 @@ public abstract class PeicesAbstract {
     private int positionX;
     private int positionY;
 
+    private int tempX;
+
+    private int tempY;
     private int size;
     private String name;
 
@@ -39,6 +42,12 @@ public abstract class PeicesAbstract {
     public abstract Color getColor();
 
     public abstract void setColor(Color color);
+
+    public abstract void setTempX(int x);
+    public abstract  void setTempY(int y);
+
+    public abstract int getTempX();
+    public abstract  int getTempY();
 
 
 }
