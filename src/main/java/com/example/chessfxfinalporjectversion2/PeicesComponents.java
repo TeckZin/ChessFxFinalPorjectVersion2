@@ -3,7 +3,7 @@ package com.example.chessfxfinalporjectversion2;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class PeicesComponents {
+public class  PeicesComponents {
 
     private Rectangle rectangle;
     private int startPositionY;
@@ -34,3 +34,5 @@ public class PeicesComponents {
     }
 
 }
+
+
