@@ -26,6 +26,9 @@ public class DraggableMaker {
 
 
 
+
+
+
 //        Rectangle rectangle = (Rectangle) node;
 //        rectangle.setOnMousePressed(event -> pressed(event, rectangle));
 //        rectangle.setOnMouseReleased(event -> released(event, rectangle));

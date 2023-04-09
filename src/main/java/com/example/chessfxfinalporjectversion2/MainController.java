@@ -52,7 +52,7 @@ public class MainController implements Initializable {
           Locater locater = new Locater(piecesOnBoard);
 
           Interactions interactions = new Interactions();
-          interactions.addEventHandlers(pane);
+          interactions.addEventHandlers(pane, piecesOnBoard);
 
      }
      //<AnchorPane fx:id="pane" layoutX="100.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="805.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessfxfinalporjectversion2.MainController" />

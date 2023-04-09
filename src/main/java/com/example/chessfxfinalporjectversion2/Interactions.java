@@ -9,6 +9,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -26,14 +28,14 @@ public class Interactions {
     private King king;
     private Queen queen;
 
-
+    private ArrayList<Object> peicesOnBoard;
 
     private boolean pressed;
 
     private boolean sameLoaction;
 
 
-    public Interactions(Object actionObject, Object stillObject){
+    public Interactions(AnchorPane pane, Object actionObject, Object stillObject){
             this.pane = pane;
             this.actionObject = actionObject;
             this.stillObject = stillObject;
@@ -59,7 +61,9 @@ public class Interactions {
 
     public Interactions(){}
 
-    public void addEventHandlers(AnchorPane pane){
+    public void addEventHandlers(AnchorPane pane, ArrayList<Object> peicesOnBoard){
+        this.peicesOnBoard = peicesOnBoard;
+
         pane.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -68,9 +72,20 @@ public class Interactions {
                 EventTarget target = mouseEvent.getTarget();
                 try{
                     System.out.println("Working");
-                    Rectangle rectangle =  (Rectangle) target;
+                    Object targetObject =  (Object) target;
+                    int objectX = getObjectTempX(targetObject);
+                    int objectY = getObjectTempY(targetObject);
+                    for(Object o : peicesOnBoard){
+                        int x = getObjectTempX(o);
+                        int y = getObjectTempY(o);
 
-                    System.out.println(rectangle.getId());
+                        if(objectX == x && objectY == y){
+
+                            Rectangle recTarget = getRectangleObject(targetObject);
+                            peiceRemovel(recTarget);
+                        }
+                    }
+
 
 
                 } catch (Exception e){
@@ -120,6 +135,14 @@ public class Interactions {
 
     }
 
+    public void peiceRemovel(Rectangle rectangle){
+
+        System.out.println("Object Remove");
+        pane.getChildren().remove(rectangle);
+
+
+
+    }
 
 
 
@@ -150,6 +173,62 @@ public class Interactions {
         return null;
     }
 
+    public int getObjectTempX(Object o){
+        String name = o.getClass().getName();
+
+        if(name.equals(pawn.getName())){
+            pawn = (Pawn) o;
+            return pawn.getTempX();
+        }else if (name.equals(rook.getName())){
+            rook = (Rook) o;
+            return rook.getTempX();
+        }else if (name.equals(knight.getName())){
+            knight = (Knight) o;
+            return knight.getTempX();
+        }else if (name.equals(bishop.getName())){
+            bishop = (Bishop) o;
+            return bishop.getTempX();
+        }else if (name.equals(king.getName())){
+            king = (King) o;
+            return king.getTempX();
+        }else if (name.equals(queen.getName())) {
+            queen = (Queen) o;
+            return queen.getTempX();
+        }
+
+
+        return 0;
+    }
+
+    public int getObjectTempY(Object o){
+        String name = o.getClass().getName();
+
+        if(name.equals(pawn.getName())){
+            pawn = (Pawn) o;
+            return pawn.getTempY();
+        }else if (name.equals(rook.getName())){
+            rook = (Rook) o;
+            return rook.getTempY();
+        }else if (name.equals(knight.getName())){
+            knight = (Knight) o;
+            return knight.getTempY();
+        }else if (name.equals(bishop.getName())){
+            bishop = (Bishop) o;
+            return bishop.getTempY();
+        }else if (name.equals(king.getName())){
+            king = (King) o;
+            return king.getTempY();
+        }else if (name.equals(queen.getName())) {
+            queen = (Queen) o;
+            return queen.getTempY();
+        }
+
+
+        return 0;
+    }
+
+
+
     public boolean getPressed() {
         return pressed;
     }
@@ -158,14 +237,6 @@ public class Interactions {
         this.pressed = pressed;
     }
 
-    public void peiceRemovel(Rectangle rectangle){
-
-        System.out.println("Object Remove");
-        pane.getChildren().remove(rectangle);
-
-
-
-    }
 
 
 }
