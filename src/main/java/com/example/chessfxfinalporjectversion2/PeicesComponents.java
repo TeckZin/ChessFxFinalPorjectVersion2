@@ -14,6 +14,8 @@ public class  PeicesComponents extends ImageView {
     private int startPositionY;
     private int startPositionX;
 
+    private String path =  "C:\\Users\\Teck\\IntellijFx\\ChessFxFinalPorjectVersion2\\src\\main\\java\\PiecesImages\\";
+
     private ImageView myImageView;
 
     public PeicesComponents(int size, int startPositionX, int startPositionY){
@@ -51,6 +53,10 @@ public class  PeicesComponents extends ImageView {
 
     public int getStartPositionY(){
         return startPositionY;
+    }
+
+    public String getPath(){
+        return path;
     }
 
 }

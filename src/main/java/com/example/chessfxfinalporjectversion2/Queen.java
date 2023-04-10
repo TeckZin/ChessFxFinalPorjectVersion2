@@ -45,14 +45,14 @@ public class Queen extends PeicesAbstract {
 
 
 
-
         PeicesComponents peicesComponents = new PeicesComponents(controlSize, positionX, positionY);
         this.rectangle = peicesComponents.getRectangle();
 
-//        peicesComponents.setImage(colorType, type);
-        Image img = new Image("C:\\Users\\Teck\\IntellijFx\\ChessFxFinalPorjectVersion2\\src\\main\\java\\PiecesImages\\" + colorType + type + ".png");
-        this.rectangle.setFill(new ImagePattern(img));
 
+//        peicesComponents.setImage(colorType, type);
+
+        Image img = new Image(peicesComponents.getPath() + colorType + type + ".png");
+        this.rectangle.setFill(new ImagePattern(img));
 
 
         draggableMakerGrid.makeDraggable(peicesComponents);

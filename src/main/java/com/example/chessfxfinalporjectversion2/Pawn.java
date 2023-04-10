@@ -27,7 +27,7 @@ public class Pawn extends PeicesAbstract {
     private String type;
     private String colorType;
 
-    private String path = "C:\\Users\\Teck\\IntellijFx\\ChessFxFinalPorjectVersion2\\src\\main\\java\\PiecesImages\\";
+    private String path;
     private int colorBit;
 
 
@@ -63,13 +63,13 @@ public class Pawn extends PeicesAbstract {
 
 
 
-
         PeicesComponents peicesComponents = new PeicesComponents(controlSize, positionX, positionY);
         this.rectangle = peicesComponents.getRectangle();
 
+
 //        peicesComponents.setImage(colorType, type);
 
-        Image img = new Image(path + colorType + type + ".png");
+        Image img = new Image(peicesComponents.getPath() + colorType + type + ".png");
         this.rectangle.setFill(new ImagePattern(img));
 
         draggableMakerGrid.makeDraggable(peicesComponents);
