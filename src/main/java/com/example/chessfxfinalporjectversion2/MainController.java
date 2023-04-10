@@ -49,7 +49,7 @@ public class MainController implements Initializable {
           piecesHandler = new PeicesHandler(pane, controlSize, draggableMaker, draggableMakerGrid, FEN);
           piecesOnBoard = piecesHandler.getPeicesOnBoard();
 
-          Locater locater = new Locater(piecesOnBoard);
+
 
           Interactions interactions = new Interactions();
           interactions.addEventHandlers(pane, piecesOnBoard);
