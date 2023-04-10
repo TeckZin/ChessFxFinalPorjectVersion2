@@ -1,7 +1,9 @@
 package com.example.chessfxfinalporjectversion2;
 
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 public class Queen extends PeicesAbstract {
@@ -13,24 +15,33 @@ public class Queen extends PeicesAbstract {
     private int tempY;
 
     private int controlSize;
-
+    private String type;
+    private String colorType;
+    private int colorBit;
     private Color color;
     private String name = "queen";
     public Queen(AnchorPane pane, int controlSize, int positionX, int positionY, DraggableMaker draggableMaker, DraggableMakerGrid draggableMakerGrid, int colorBit, Color color) {
         setTempX(positionX);
         setTempY(positionY);
-
         setPositionX(positionX);
         setPositionY(positionY);
         setControlSize(controlSize);
         setColor(color);
+        this.colorBit = colorBit;
 
-//        Text text = new Text();
-//        text.setText(name);
-//        text.setX(positionX);
-//        text.setY(positionY);
-//        text.setFill(textColor);
-//        text.setFont(Font.font("Verdana",20));
+
+
+        if (colorBit == 1){
+            colorType = "White";
+
+        } else {
+            colorType = "Black";
+        }
+
+
+        this.type = "QueenPNG";
+
+
 
 
 
@@ -38,16 +49,16 @@ public class Queen extends PeicesAbstract {
         PeicesComponents peicesComponents = new PeicesComponents(controlSize, positionX, positionY);
         this.rectangle = peicesComponents.getRectangle();
 
-
-        rectangle.setFill(color);
-        pane.getChildren().add(rectangle);
-
-
+//        peicesComponents.setImage(colorType, type);
+        Image img = new Image("C:\\Users\\Teck\\IntellijFx\\ChessFxFinalPorjectVersion2\\src\\main\\java\\PiecesImages\\" + colorType + type + ".png");
+        this.rectangle.setFill(new ImagePattern(img));
 
 
 
         draggableMakerGrid.makeDraggable(peicesComponents);
         draggableMaker.makeDraggable(rectangle);
+
+        pane.getChildren().add(rectangle);
 
 
     }

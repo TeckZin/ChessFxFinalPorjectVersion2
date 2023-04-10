@@ -1,7 +1,9 @@
 package com.example.chessfxfinalporjectversion2;
 
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 public class Knight extends PeicesAbstract {
@@ -14,39 +16,51 @@ public class Knight extends PeicesAbstract {
 
     private int controlSize;
     private String name = "Knight";
+    private String colorType;
+    private int colorBit;
+
+    private String type;
 
     private Color color;
     public Knight(AnchorPane pane, int controlSize, int positionX, int positionY, DraggableMaker draggableMaker, DraggableMakerGrid draggableMakerGrid, int colorBit, Color color) {
         setTempX(positionX);
         setTempY(positionY);
-
         setPositionX(positionX);
         setPositionY(positionY);
         setControlSize(controlSize);
         setColor(color);
+        this.colorBit = colorBit;
 
-//        Text text = new Text();
-//        text.setText(name);
-//        text.setX(positionX);
-//        text.setY(positionY);
-//        text.setFill(textColor);
-//        text.setFont(Font.font("Verdana",20));
+
+
+        if (colorBit == 1){
+            colorType = "White";
+
+        } else {
+            colorType = "Black";
+        }
+
+
+        this.type = "KnightPNG";
+
+
+
 
 
 
         PeicesComponents peicesComponents = new PeicesComponents(controlSize, positionX, positionY);
         this.rectangle = peicesComponents.getRectangle();
 
+//        peicesComponents.setImage(colorType, type);
 
-        rectangle.setFill(color);
-        pane.getChildren().add(rectangle);
-
-
-
+        Image img = new Image("C:\\Users\\Teck\\IntellijFx\\ChessFxFinalPorjectVersion2\\src\\main\\java\\PiecesImages\\" + colorType + type + ".png");
+        this.rectangle.setFill(new ImagePattern(img));
 
 
         draggableMakerGrid.makeDraggable(peicesComponents);
         draggableMaker.makeDraggable(rectangle);
+
+        pane.getChildren().add(rectangle);
 
 
     }

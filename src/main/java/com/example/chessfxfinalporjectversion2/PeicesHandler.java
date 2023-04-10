@@ -1,13 +1,15 @@
 package com.example.chessfxfinalporjectversion2;
 
 import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 
 import java.nio.channels.Pipe;
 import java.util.ArrayList;
 
-public class PeicesHandler implements GridInterface{
+public class PeicesHandler extends ImageView implements GridInterface {
 
     private AnchorPane pane;
     private int controlSize;
@@ -29,6 +31,11 @@ public class PeicesHandler implements GridInterface{
     private int bishopY;
     private int kingY;
     private int queenY;
+
+    private String color;
+    private String type;
+
+    private Image image;
 
 
 

@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.event.EventTarget;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
@@ -31,6 +32,8 @@ public class Interactions {
     private ArrayList<Object> peicesOnBoard;
 
     private boolean pressed;
+
+    private Image image;
 
     private boolean sameLoaction;
 
@@ -222,10 +225,9 @@ public class Interactions {
             queen = (Queen) o;
             return queen.getTempY();
         }
-
-
         return 0;
     }
+
 
 
 

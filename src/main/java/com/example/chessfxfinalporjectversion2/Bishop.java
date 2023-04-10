@@ -1,7 +1,9 @@
 package com.example.chessfxfinalporjectversion2;
 
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 public class Bishop extends PeicesAbstract {
@@ -15,6 +17,11 @@ public class Bishop extends PeicesAbstract {
     private int tempX;
     private int tempY;
 
+    private String type;
+    private String colorType;
+    private int colorBit;
+
+
 
     private Color color;
     private String name = "Bishop";
@@ -26,13 +33,21 @@ public class Bishop extends PeicesAbstract {
         setPositionY(positionY);
         setControlSize(controlSize);
         setColor(color);
+        this.colorBit = colorBit;
 
-//        Text text = new Text();
-//        text.setText(name);
-//        text.setX(positionX);
-//        text.setY(positionY);
-//        text.setFill(textColor);
-//        text.setFont(Font.font("Verdana",20));
+
+
+        if (colorBit == 1){
+            colorType = "White";
+
+        } else {
+            colorType = "Black";
+        }
+
+
+        this.type = "BishopPNG";
+
+
 
 
 
@@ -40,16 +55,16 @@ public class Bishop extends PeicesAbstract {
         PeicesComponents peicesComponents = new PeicesComponents(controlSize, positionX, positionY);
         this.rectangle = peicesComponents.getRectangle();
 
+//        peicesComponents.setImage(colorType, type);
 
-        rectangle.setFill(color);
-        pane.getChildren().add(rectangle);
-
-
-
+        Image img = new Image("C:\\Users\\Teck\\IntellijFx\\ChessFxFinalPorjectVersion2\\src\\main\\java\\PiecesImages\\" + colorType + type + ".png");
+        this.rectangle.setFill(new ImagePattern(img));
 
 
         draggableMakerGrid.makeDraggable(peicesComponents);
         draggableMaker.makeDraggable(rectangle);
+
+        pane.getChildren().add(rectangle);
 
 
     }
