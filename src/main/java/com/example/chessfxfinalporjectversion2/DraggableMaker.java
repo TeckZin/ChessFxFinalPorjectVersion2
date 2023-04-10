@@ -10,19 +10,31 @@ public class DraggableMaker {
 
     private MouseEvent event;
     public void makeDraggable(Node node){
+        Interactions interactions = new Interactions();
         node.setOnMousePressed(mouseEvent -> {
             mouseAnchorX = mouseEvent.getX();
             mouseAnchorY = mouseEvent.getY();
 
 
+
         });
+
+
 
         node.setOnMouseDragged(mouseEvent -> {
 
             node.setLayoutX(mouseEvent.getSceneX() - mouseAnchorX - 100);
             node.setLayoutY(mouseEvent.getSceneY() - mouseAnchorY - 100);
 
+
+
         });
+
+
+
+
+
+
 
 
 

@@ -195,6 +195,9 @@ public class PeicesHandler extends ImageView implements GridInterface {
 
 
            peicesOnBoard.add(pawn);
+
+            pawn.setTempX(file*100);
+            pawn.setTempY(rank*100);
         } else if (fenCharacter == 'r'){
             if (consoleInDepthMessages) {
                 System.out.printf("rook Color: <%d>%n", colorBit);
@@ -207,6 +210,8 @@ public class PeicesHandler extends ImageView implements GridInterface {
                             draggableMaker, draggableMakerGrid,
                             colorBit, Color.web("#65C45E"));
             peicesOnBoard.add(rook);
+            rook.setTempX(file*100);
+            rook.setTempY(rank*100);
 
         } else if (fenCharacter == 'n'){
             if (consoleInDepthMessages) {
@@ -221,6 +226,8 @@ public class PeicesHandler extends ImageView implements GridInterface {
                     colorBit, Color.web("#EB8801"));
 
             peicesOnBoard.add(knight);
+            knight.setTempX(file*100);
+            knight.setTempY(rank*100);
 
         } else if (fenCharacter == 'b') {
             if (consoleInDepthMessages) {
@@ -235,6 +242,8 @@ public class PeicesHandler extends ImageView implements GridInterface {
                     colorBit, Color.web("#F207C7"));
 
             peicesOnBoard.add(bishop);
+            bishop.setTempX(file*100);
+            bishop.setTempY(rank*100);
 
         } else if (fenCharacter == 'k'){
             if (consoleInDepthMessages) {
@@ -244,11 +253,14 @@ public class PeicesHandler extends ImageView implements GridInterface {
             setKingX(file*100);
             setKingY(rank*100);
 
+
             king = new King(pane, controlSize, getKingX(), getKingY(),
                     draggableMaker, draggableMakerGrid,
                     colorBit, Color.web("#070FF2"));
 
             peicesOnBoard.add(king);
+            king.setTempX(file*100);
+            king.setTempY(rank*100);
 
         } else if(fenCharacter == 'q'){
             if (consoleInDepthMessages) {
@@ -262,6 +274,8 @@ public class PeicesHandler extends ImageView implements GridInterface {
                     draggableMaker, draggableMakerGrid,
                     colorBit, Color.web("#F20707"));
             peicesOnBoard.add(queen);
+            queen.setTempX(file*100);
+            queen.setTempY(rank*100);
 
 
         }

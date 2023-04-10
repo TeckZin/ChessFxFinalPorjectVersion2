@@ -73,20 +73,30 @@ public class Interactions {
 
 
                 EventTarget target = mouseEvent.getTarget();
+
                 try{
                     System.out.println("Working");
                     Object targetObject =  (Object) target;
                     int objectX = getObjectTempX(targetObject);
                     int objectY = getObjectTempY(targetObject);
+                    System.out.printf("%d, %d", objectX, objectY);
+
                     for(Object o : peicesOnBoard){
+                        System.out.println(1);
+
                         int x = getObjectTempX(o);
                         int y = getObjectTempY(o);
 
-                        if(objectX == x && objectY == y){
 
-                            Rectangle recTarget = getRectangleObject(targetObject);
-                            peiceRemovel(recTarget);
-                        }
+                        setObjectTempXY(x,y, o);
+
+                        System.out.printf("Target: <x: %d, y:%d> Moving <x %d, y: %d>%n", objectX, objectY, x, y);
+
+//                        if(objectX == x && objectY == y){
+//
+//                            Rectangle recTarget = getRectangleObject(targetObject);
+//                            peiceRemovel(recTarget);
+//                        }
                     }
 
 
@@ -226,6 +236,40 @@ public class Interactions {
             return queen.getTempY();
         }
         return 0;
+    }
+
+    public void setObjectTempXY(int x1, int y1, Object o){
+
+        int x = (int) x1;
+        int y = (int) y1;
+
+
+        String name = o.getClass().getName();
+        if(name.equals(pawn.getName())){
+            pawn = (Pawn) o;
+            pawn.setTempX(x);
+            pawn.setTempY(y);
+        }else if (name.equals(rook.getName())){
+            rook = (Rook) o;
+            pawn.setTempX(x);
+            pawn.setTempY(y);
+        }else if (name.equals(knight.getName())){
+            knight = (Knight) o;
+            pawn.setTempX(x);
+            pawn.setTempY(y);
+        }else if (name.equals(bishop.getName())){
+            bishop = (Bishop) o;
+            pawn.setTempX(x);
+            pawn.setTempY(y);
+        }else if (name.equals(king.getName())){
+            king = (King) o;
+            pawn.setTempX(x);
+            pawn.setTempY(y);
+        }else if (name.equals(queen.getName())) {
+            queen = (Queen) o;
+            pawn.setTempX(x);
+            pawn.setTempY(y);
+        }
     }
 
 
