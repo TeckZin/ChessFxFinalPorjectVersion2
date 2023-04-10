@@ -70,7 +70,7 @@ public class MainController implements Initializable {
      }
 
      @FXML
-     protected void onResetFEN(){
+     protected void onResetFEN() {
           piecesHandler.fenConverter(FEN);
      }
 
