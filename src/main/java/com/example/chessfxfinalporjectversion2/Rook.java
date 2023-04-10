@@ -21,6 +21,8 @@ public class Rook extends PeicesAbstract {
     private int colorBit;
 
     private Color color;
+
+    public Rook(){}
     public Rook(AnchorPane pane, int controlSize, int positionX, int positionY, DraggableMaker draggableMaker, DraggableMakerGrid draggableMakerGrid, int colorBit, Color color) {
         setTempX(positionX);
         setTempY(positionY);
@@ -97,15 +99,6 @@ public class Rook extends PeicesAbstract {
 
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public Rectangle getRectangle() {

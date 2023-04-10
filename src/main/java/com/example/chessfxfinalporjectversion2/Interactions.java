@@ -22,12 +22,12 @@ public class Interactions {
     private AnchorPane pane;
     private Object actionObject;
     private Object stillObject;
-    private Pawn pawn;
-    private Rook rook;
-    private Knight knight;
-    private Bishop bishop;
-    private King king;
-    private Queen queen;
+    private Pawn pawn = new Pawn();
+    private Rook rook = new Rook();
+    private Knight knight = new Knight();
+    private Bishop bishop = new Bishop();
+    private King king = new King();
+    private Queen queen = new Queen();
 
     private ArrayList<Object> peicesOnBoard;
 
@@ -74,30 +74,50 @@ public class Interactions {
 
                 EventTarget target = mouseEvent.getTarget();
 
+
+
                 try{
                     System.out.println("Working");
-                    Object targetObject =  (Object) target;
-                    int objectX = getObjectTempX(targetObject);
-                    int objectY = getObjectTempY(targetObject);
-                    System.out.printf("%d, %d", objectX, objectY);
+                    Rectangle rec = (Rectangle) target;
+
+                    int recX = (int) rec.getX();
+                    int recY = (int) rec.getY();
+
+
+
+
+
+
 
                     for(Object o : peicesOnBoard){
-                        System.out.println(1);
+
+
+
+
+//                        System.out.println(o.getClass().getName());
 
                         int x = getObjectTempX(o);
                         int y = getObjectTempY(o);
 
 
-                        setObjectTempXY(x,y, o);
 
-                        System.out.printf("Target: <x: %d, y:%d> Moving <x %d, y: %d>%n", objectX, objectY, x, y);
 
-//                        if(objectX == x && objectY == y){
-//
-//                            Rectangle recTarget = getRectangleObject(targetObject);
-//                            peiceRemovel(recTarget);
-//                        }
+                        if(recX == x && recY == y){
+                            System.out.printf("Moving <x: %d, y:%d> Target <x: %d, y: %d>%n", x,y,recX,recY);
+
+
+                            setObjectTempXY(recX,recY, o);
+                            peiceRemovel(rec);
+
+                        }
+
+
+
                     }
+
+
+
+
 
 
 
@@ -131,22 +151,22 @@ public class Interactions {
 
 
 
-    public void objectOnObject(){
-        Rectangle rectangleAction = getRectangleObject(actionObject);
-        Rectangle rectangleStill = getRectangleObject(stillObject);
-        int actionX = (int) rectangleAction.getX();
-        int actionY = (int) rectangleAction.getY();
-        int stillX = (int) rectangleStill.getX();
-        int stillY = (int) rectangleStill.getY();
-
-        if(actionX == stillX && stillY == actionY){
-            sameLoaction = true;
-            peiceRemovel(rectangleStill);
-
-        }
-
-
-    }
+//    public void objectOnObject(){
+//        Rectangle rectangleAction = getRectangleObject(actionObject);
+//        Rectangle rectangleStill = getRectangleObject(stillObject);
+//        int actionX = (int) rectangleAction.getX();
+//        int actionY = (int) rectangleAction.getY();
+//        int stillX = (int) rectangleStill.getX();
+//        int stillY = (int) rectangleStill.getY();
+//
+//        if(actionX == stillX && stillY == actionY){
+//            sameLoaction = true;
+//            peiceRemovel(rectangleStill);
+//
+//        }
+//
+//
+//    }
 
     public void peiceRemovel(Rectangle rectangle){
 
@@ -162,22 +182,22 @@ public class Interactions {
     public Rectangle getRectangleObject(Object o){
         String name = o.getClass().getName();
 
-        if(name.equals(pawn.getName())){
+        if(name.equals(pawn.getClass().getName())){
             pawn = (Pawn) o;
             return pawn.getRectangle();
-        }else if (name.equals(rook.getName())){
+        }else if (name.equals(rook.getClass().getName())){
             rook = (Rook) o;
             return rook.getRectangle();
-        }else if (name.equals(knight.getName())){
+        }else if (name.equals(knight.getClass().getName())){
             knight = (Knight) o;
             return knight.getRectangle();
-        }else if (name.equals(bishop.getName())){
+        }else if (name.equals(bishop.getClass().getName())){
             bishop = (Bishop) o;
             return bishop.getRectangle();
-        }else if (name.equals(king.getName())){
+        }else if (name.equals(king.getClass().getName())){
             king = (King) o;
             return king.getRectangle();
-        }else if (name.equals(queen.getName())) {
+        }else if (name.equals(queen.getClass().getName())) {
             queen = (Queen) o;
             return queen.getRectangle();
         }
@@ -189,22 +209,22 @@ public class Interactions {
     public int getObjectTempX(Object o){
         String name = o.getClass().getName();
 
-        if(name.equals(pawn.getName())){
+        if(name.equals(pawn.getClass().getName())){
             pawn = (Pawn) o;
             return pawn.getTempX();
-        }else if (name.equals(rook.getName())){
+        }else if (name.equals(rook.getClass().getName())){
             rook = (Rook) o;
             return rook.getTempX();
-        }else if (name.equals(knight.getName())){
+        }else if (name.equals(knight.getClass().getName())){
             knight = (Knight) o;
             return knight.getTempX();
-        }else if (name.equals(bishop.getName())){
+        }else if (name.equals(bishop.getClass().getName())){
             bishop = (Bishop) o;
             return bishop.getTempX();
-        }else if (name.equals(king.getName())){
+        }else if (name.equals(king.getClass().getName())){
             king = (King) o;
             return king.getTempX();
-        }else if (name.equals(queen.getName())) {
+        }else if (name.equals(queen.getClass().getName())) {
             queen = (Queen) o;
             return queen.getTempX();
         }
@@ -216,22 +236,22 @@ public class Interactions {
     public int getObjectTempY(Object o){
         String name = o.getClass().getName();
 
-        if(name.equals(pawn.getName())){
+        if(name.equals(pawn.getClass().getName())){
             pawn = (Pawn) o;
             return pawn.getTempY();
-        }else if (name.equals(rook.getName())){
+        }else if (name.equals(rook.getClass().getName())){
             rook = (Rook) o;
             return rook.getTempY();
-        }else if (name.equals(knight.getName())){
+        }else if (name.equals(knight.getClass().getName())){
             knight = (Knight) o;
             return knight.getTempY();
-        }else if (name.equals(bishop.getName())){
+        }else if (name.equals(bishop.getClass().getName())){
             bishop = (Bishop) o;
             return bishop.getTempY();
-        }else if (name.equals(king.getName())){
+        }else if (name.equals(king.getClass().getName())){
             king = (King) o;
             return king.getTempY();
-        }else if (name.equals(queen.getName())) {
+        }else if (name.equals(queen.getClass().getName())) {
             queen = (Queen) o;
             return queen.getTempY();
         }
@@ -245,27 +265,27 @@ public class Interactions {
 
 
         String name = o.getClass().getName();
-        if(name.equals(pawn.getName())){
+        if(name.equals(pawn.getClass().getName())){
             pawn = (Pawn) o;
             pawn.setTempX(x);
             pawn.setTempY(y);
-        }else if (name.equals(rook.getName())){
+        }else if (name.equals(rook.getClass().getName())){
             rook = (Rook) o;
             pawn.setTempX(x);
             pawn.setTempY(y);
-        }else if (name.equals(knight.getName())){
+        }else if (name.equals(knight.getClass().getName())){
             knight = (Knight) o;
             pawn.setTempX(x);
             pawn.setTempY(y);
-        }else if (name.equals(bishop.getName())){
+        }else if (name.equals(bishop.getClass().getName())){
             bishop = (Bishop) o;
             pawn.setTempX(x);
             pawn.setTempY(y);
-        }else if (name.equals(king.getName())){
+        }else if (name.equals(king.getClass().getName())){
             king = (King) o;
             pawn.setTempX(x);
             pawn.setTempY(y);
-        }else if (name.equals(queen.getName())) {
+        }else if (name.equals(queen.getClass().getName())) {
             queen = (Queen) o;
             pawn.setTempX(x);
             pawn.setTempY(y);

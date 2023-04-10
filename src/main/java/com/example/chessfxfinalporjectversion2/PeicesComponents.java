@@ -14,7 +14,7 @@ public class  PeicesComponents extends ImageView {
     private int startPositionY;
     private int startPositionX;
 
-    private String path =  "C:\\Users\\Teck\\IntellijFx\\ChessFxFinalPorjectVersion2\\src\\main\\java\\PiecesImages\\";
+    private String path =  "C:\\Users\\Teck\\IntellijFx\\ChessFxFinalPorjectVersion2\\src\\main\\java\\PiecesImages";
 
     private ImageView myImageView;
 
@@ -25,7 +25,7 @@ public class  PeicesComponents extends ImageView {
         this.startPositionY = startPositionY;
 
         rectangle = new Rectangle(startPositionX, startPositionY, size, size);
-        rectangle.setFill(color);
+//        rectangle.setFill(color);
 
 
 
@@ -39,7 +39,7 @@ public class  PeicesComponents extends ImageView {
     public void setImage(String color, String type){
         this.color = color;
         this.type = type;
-        this.setPiece(new Image(this .color + "" + this.type + ".png"));
+        this.setPiece(new Image("\\" + this.color + "" + this.type + ".png"));
 
 
     }

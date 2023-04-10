@@ -25,6 +25,8 @@ public class Bishop extends PeicesAbstract {
 
     private Color color;
     private String name = "Bishop";
+
+    public Bishop(){}
     public Bishop(AnchorPane pane, int controlSize, int positionX, int positionY, DraggableMaker draggableMaker, DraggableMakerGrid draggableMakerGrid, int colorBit, Color color) {
 
         setTempX(positionX);
@@ -104,15 +106,7 @@ public class Bishop extends PeicesAbstract {
 
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
 
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public Rectangle getRectangle() {

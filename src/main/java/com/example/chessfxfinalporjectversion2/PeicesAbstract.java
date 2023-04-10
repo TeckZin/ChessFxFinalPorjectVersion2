@@ -32,9 +32,6 @@ public abstract class PeicesAbstract {
 
     public abstract void setControlSize(int controlSize);
 
-    public abstract String getName();
-
-    public abstract void setName(String name);
 
     public abstract Rectangle getRectangle();
     public abstract void setRectangle(Rectangle rectangle);

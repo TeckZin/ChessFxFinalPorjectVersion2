@@ -22,6 +22,8 @@ public class Knight extends PeicesAbstract {
     private String type;
 
     private Color color;
+
+    public Knight(){}
     public Knight(AnchorPane pane, int controlSize, int positionX, int positionY, DraggableMaker draggableMaker, DraggableMakerGrid draggableMakerGrid, int colorBit, Color color) {
         setTempX(positionX);
         setTempY(positionY);
@@ -97,15 +99,6 @@ public class Knight extends PeicesAbstract {
 
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public Rectangle getRectangle() {

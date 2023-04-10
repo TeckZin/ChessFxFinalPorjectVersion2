@@ -22,6 +22,8 @@ public class King extends PeicesAbstract {
     private int colorBit;
 
     Color color;
+
+    public King(){}
     public King(AnchorPane pane, int controlSize, int positionX, int positionY, DraggableMaker draggableMaker, DraggableMakerGrid draggableMakerGrid, int colorBit, Color color) {
         setTempX(positionX);
         setTempY(positionY);
@@ -98,15 +100,6 @@ public class King extends PeicesAbstract {
 
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public Rectangle getRectangle() {

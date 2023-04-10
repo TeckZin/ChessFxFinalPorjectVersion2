@@ -129,16 +129,6 @@ public class Pawn extends PeicesAbstract {
     }
 
     @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
     public Rectangle getRectangle() {
 
         return rectangle;

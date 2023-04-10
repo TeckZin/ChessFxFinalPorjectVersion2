@@ -20,6 +20,8 @@ public class Queen extends PeicesAbstract {
     private int colorBit;
     private Color color;
     private String name = "queen";
+
+    public Queen(){}
     public Queen(AnchorPane pane, int controlSize, int positionX, int positionY, DraggableMaker draggableMaker, DraggableMakerGrid draggableMakerGrid, int colorBit, Color color) {
         setTempX(positionX);
         setTempY(positionY);
@@ -96,15 +98,6 @@ public class Queen extends PeicesAbstract {
 
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public Rectangle getRectangle() {
