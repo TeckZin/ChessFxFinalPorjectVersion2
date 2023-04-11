@@ -22,7 +22,7 @@ public class MainController implements Initializable {
 
      private DraggableMakerGrid draggableMakerGrid;
      private DraggableMaker draggableMaker = new DraggableMaker();
-     private String FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+     private String FEN = "r1bqkb1r/pp3ppp/2pn1n2/1B1pp3/4P3/5N2/PPPPQPPP/RNB1K2R w KQkq - 0 1";
 
      private PeicesHandler piecesHandler;
 

@@ -5,7 +5,7 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  *
- * @params basic infomation for allg rid
+ * @params basic infomation for all grid
  * @author Teck
  */
 
