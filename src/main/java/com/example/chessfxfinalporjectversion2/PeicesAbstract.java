@@ -1,5 +1,5 @@
 package com.example.chessfxfinalporjectversion2;
-
+import java.util.ArrayList;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -47,5 +47,7 @@ public abstract class PeicesAbstract {
     public abstract int getTempX();
     public abstract  int getTempY();
 
-
+    public void getPossibleMoves(){}
+    public void showPossibleMoves(){}
+    ArrayList<Integer> possibleMoves;
 }

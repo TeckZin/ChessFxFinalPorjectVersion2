@@ -34,9 +34,9 @@ public class GridHandler extends GridBase implements GridInterface{
         for (int file = 0; file < getFile(); ++file) {
             for (int rank = 0; rank < getRank(); ++rank) {
                 boolean lightSqaureBoolean = (file + rank) % 2 != 0;
-                Color color = Color.web("#D5DF71");
+                Color color = Color.web("#D2B48D");
                 if (lightSqaureBoolean) {
-                    color = Color.web("#F06774");
+                    color = Color.web("#AF6E4D");
                 }
 
                 Rectangle rec = new Rectangle();

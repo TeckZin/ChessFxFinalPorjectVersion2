@@ -7,6 +7,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
+import java.util.ArrayList;
+
 public class Pawn extends PeicesAbstract {
 
 
@@ -60,9 +62,6 @@ public class Pawn extends PeicesAbstract {
         this.type = "PawnPNG";
 
 
-
-
-
         PeicesComponents peicesComponents = new PeicesComponents(controlSize, positionX, positionY);
         this.rectangle = peicesComponents.getRectangle();
 
@@ -85,7 +84,6 @@ public class Pawn extends PeicesAbstract {
     }
 
     public Pawn(){}
-
 
 
 //    @FXML

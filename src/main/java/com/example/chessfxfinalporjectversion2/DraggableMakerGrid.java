@@ -35,9 +35,6 @@ public class DraggableMakerGrid extends GridBase implements GridInterface{
 
 
             });
-
-
-
         }
 
     /**
@@ -52,17 +49,11 @@ public class DraggableMakerGrid extends GridBase implements GridInterface{
             mouseAnchorX = mouseEvent.getSceneX()- 100;
             mouseAnchorY = mouseEvent.getSceneY() - 100;
 
-
-
             int x = (int) ((mouseAnchorX/getControlSize()) % getFile()) * getControlSize();
             int y = (int) ((mouseAnchorY/getControlSize()) % getRank()) * getControlSize();
 
             node.setLayoutX(x - peicesComponents.getStartPositionX());
             node.setLayoutY(y - peicesComponents.getStartPositionY());
-
-
-
-
 
         });
 
