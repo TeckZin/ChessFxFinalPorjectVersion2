@@ -354,24 +354,24 @@ public class Interactions {
             pawn.setTempY(y);
         }else if (name.equals(rook.getClass().getName())){
             rook = (Rook) o;
-            pawn.setTempX(x);
-            pawn.setTempY(y);
+            rook.setTempX(x);
+            rook.setTempY(y);
         }else if (name.equals(knight.getClass().getName())){
             knight = (Knight) o;
-            pawn.setTempX(x);
-            pawn.setTempY(y);
+            knight.setTempX(x);
+            knight.setTempY(y);
         }else if (name.equals(bishop.getClass().getName())){
             bishop = (Bishop) o;
-            pawn.setTempX(x);
-            pawn.setTempY(y);
+            bishop.setTempX(x);
+            bishop.setTempY(y);
         }else if (name.equals(king.getClass().getName())){
             king = (King) o;
-            pawn.setTempX(x);
-            pawn.setTempY(y);
+            king.setTempX(x);
+            king.setTempY(y);
         }else if (name.equals(queen.getClass().getName())) {
             queen = (Queen) o;
-            pawn.setTempX(x);
-            pawn.setTempY(y);
+            queen.setTempX(x);
+            queen.setTempY(y);
         }
     }
 

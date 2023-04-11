@@ -3,6 +3,7 @@ package com.example.chessfxfinalporjectversion2;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.Scanner;
 
 public class MainController implements Initializable {
      private Scanner sc;
-
+     private Interactions interactions;
      private int controlSize = 100;
      private int file = 8;
      private int rank = 8;
@@ -46,7 +47,7 @@ public class MainController implements Initializable {
 
 
 
-          Interactions interactions = new Interactions(pane);
+          interactions = new Interactions(pane);
           interactions.addEventHandlers(pane, piecesOnBoard);
 
      }
@@ -59,8 +60,13 @@ public class MainController implements Initializable {
 
      @FXML
      protected void onResetDefault(){
-          piecesHandler.loadDefaulStartPosition();
 
+          for(Object o : piecesOnBoard){
+               Rectangle rectangle = interactions.getRectangleObject(o);
+               interactions.peiceRemovel(rectangle);
+
+          }
+          piecesHandler.loadDefaulStartPosition();
 
      }
 
