@@ -37,6 +37,8 @@ public class Interactions {
 
     private boolean sameLoaction;
 
+    private boolean dragged;
+
 
     public Interactions(AnchorPane pane, Object actionObject, Object stillObject){
             this.pane = pane;
@@ -67,7 +69,7 @@ public class Interactions {
     public void addEventHandlers(AnchorPane pane, ArrayList<Object> peicesOnBoard){
         this.peicesOnBoard = peicesOnBoard;
 
-        pane.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        pane.setOnDragDetected(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
 
@@ -78,47 +80,10 @@ public class Interactions {
 
                 try{
                     System.out.println("Working");
-                    Rectangle rec = (Rectangle) target;
-
-                    int recX = (int) rec.getX();
-                    int recY = (int) rec.getY();
-
-
-
-
-
-
-
-                    for(Object o : peicesOnBoard){
-
-
-
-
-//                        System.out.println(o.getClass().getName());
-
-                        int x = getObjectTempX(o);
-                        int y = getObjectTempY(o);
-
-
-
-
-                        if(recX == x && recY == y){
-                            System.out.printf("Moving <x: %d, y:%d> Target <x: %d, y: %d>%n", x,y,recX,recY);
-
-
-                            setObjectTempXY(recX,recY, o);
-                            peiceRemovel(rec);
-
-                        }
-
-
-
-                    }
-
-
-
-
-
+                    actionObject = (Object) target;
+                    dragged = true;
+//                    System.out.println(mouseEvent.getX());
+//                    System.out.println(mouseEvent.getY());
 
 
                 } catch (Exception e){
@@ -128,6 +93,79 @@ public class Interactions {
             }
         });
 
+        pane.setOnMouseReleased(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                EventTarget target = mouseEvent.getTarget();
+
+                try{
+                    System.out.println("Realsed");
+                    stillObject = (Object) target;
+
+
+                    int stillX = (int) Math.floor(mouseEvent.getX());
+                    int stillY = (int) Math.floor(mouseEvent.getY());
+                    System.out.println((stillX));
+                    System.out.println(stillY);
+
+
+
+                    if(dragged){
+                        for(Object o : peicesOnBoard){
+                            Rectangle rec = (Rectangle) stillObject;
+                            int recX = (int) rec.getX();
+                            int recY = (int) rec.getY();
+
+                            int tempX = getObjectTempX(o);
+                            int tempY = getObjectTempY(o);
+
+                            if(recX == tempX && recY == tempY){
+                                setObjectTempXY(stillX, stillY, o);
+                                System.out.println(tempX);
+                                System.out.println(tempY);
+
+
+                            }
+
+
+                            for(Object o2 : peicesOnBoard){
+                                int tempX2 = getObjectTempX(o2);
+                                int tempY2 = getObjectTempY(o2);
+
+                                if(tempY2 == tempY && tempX2 == tempX){
+                                    Rectangle removeRec = getRectangleObject(o2);
+                                    peiceRemovel(removeRec);
+                                }
+
+                            }
+
+
+                        }
+
+
+
+
+//                       isTaken(stillObject, actionObject);
+                        dragged = false;
+                    }
+
+
+                } catch (Exception e){
+                    System.out.println("Realsed Anchor");
+                }
+
+
+
+            }
+        });
+
+
+
+    }
+
+    public void isTaken(Object stillObject, Object actionObject){
+        System.out.println(stillObject);
+        System.out.println(actionObject);
     }
 
 
