@@ -18,6 +18,7 @@ import java.io.IOException;
 public class MainApplication extends javafx.application.Application{
 
 
+    //Sets up the initial scene of the application, sets background color and window layout
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
@@ -40,12 +41,10 @@ public class MainApplication extends javafx.application.Application{
         primaryStage.show();
 
         loadAdminControl();
-
-
     }
 
 
-
+    //Loads
     public void loadAdminControl() {
         try {
             FXMLLoader adminFxmlLoader = new FXMLLoader(getClass().getResource("Admin.fxml"));
@@ -65,7 +64,7 @@ public class MainApplication extends javafx.application.Application{
 
     }
 
-
+    //Launches project
     public static void main(String[] args) {
         launch();
     }

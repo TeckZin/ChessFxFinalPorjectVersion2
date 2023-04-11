@@ -15,12 +15,8 @@ public class MainController implements Initializable {
      private int controlSize = 100;
      private int file = 8;
      private int rank = 8;
-
      @FXML
      private AnchorPane pane;
-
-
-
      private GridHandler gridHandler;
 
      private DraggableMakerGrid draggableMakerGrid;
@@ -29,11 +25,10 @@ public class MainController implements Initializable {
 
      private PeicesHandler piecesHandler;
 
-
      private ArrayList<Object> piecesOnBoard;
 
-
      private DraggableMakerGrid gridMaker2;
+     //Creates the objects of the chess board, the pieces on the board, and the interactions
      @Override
      public void initialize(URL url, ResourceBundle resourceBundle){
           sc = new Scanner(System.in);
