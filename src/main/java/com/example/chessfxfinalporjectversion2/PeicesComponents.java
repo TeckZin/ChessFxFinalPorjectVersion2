@@ -5,6 +5,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class  PeicesComponents extends ImageView {
 
     private String color;
@@ -14,11 +17,14 @@ public class  PeicesComponents extends ImageView {
     private int startPositionY;
     private int startPositionX;
 
-    private String path =  "C:\\Users\\Jagger Hershey\\Desktop\\Semester 2\\Comp Sci 2\\Labs and Projects\\Intellij Projects\\ChessFxFinalPorjectVersion2\\src\\main\\java\\PiecesImages\\";
+    private Path absoulutPath = Paths.get("");
+
+    private String path = absoulutPath.toAbsolutePath() + "\\src\\main\\java\\PiecesImages\\";
 
     private ImageView myImageView;
 
     public PeicesComponents(int size, int startPositionX, int startPositionY){
+//        System.out.println(absoulutPath.toAbsolutePath());
         Color color = Color.web("#18B3BB");
 
         this.startPositionX = startPositionX;
