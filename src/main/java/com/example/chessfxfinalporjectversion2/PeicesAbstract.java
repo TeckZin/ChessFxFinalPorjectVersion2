@@ -4,7 +4,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import java.util.concurrent.RecursiveAction;
-
+/**
+ *
+ * @params the foundation for all the peices method it needs to contain
+ * @author Jagger
+ */
 public abstract class PeicesAbstract {
 //List of setters and getters for position, temp position, size, name
     private Rectangle rectangle;

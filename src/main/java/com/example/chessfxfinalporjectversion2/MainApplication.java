@@ -15,6 +15,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ *
+ * @params Launching the game and setting the stage
+ * @author Jagger
+ */
+
 public class MainApplication extends javafx.application.Application{
 
 

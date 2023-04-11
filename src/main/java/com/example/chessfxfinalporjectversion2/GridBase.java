@@ -3,6 +3,12 @@ package com.example.chessfxfinalporjectversion2;
 import javafx.geometry.Insets;
 import javafx.scene.layout.AnchorPane;
 
+/**
+ *
+ * @params basic infomation for allg rid
+ * @author Teck
+ */
+
 public class GridBase implements GridInterface {
     private int controlSize;
     private int file;

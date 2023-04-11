@@ -7,6 +7,12 @@ import javafx.scene.shape.Rectangle;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+/**
+ *
+ * @params setting the path to the images,
+ *              as well as the foundation of all the peices generated
+ * @author Jagger
+ */
 
 public class  PeicesComponents extends ImageView {
 

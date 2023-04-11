@@ -4,4 +4,12 @@ import javafx.scene.shape.Rectangle;
 
 public class Rules {
 
+
+    // public boolean legal(Object o) {
+
+
+
+
+    //}
+
 }

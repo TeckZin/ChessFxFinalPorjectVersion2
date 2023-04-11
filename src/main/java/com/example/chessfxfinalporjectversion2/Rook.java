@@ -6,6 +6,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
+
 public class Rook extends PeicesAbstract {
 
     private Rectangle rectangle;
@@ -65,6 +66,7 @@ public class Rook extends PeicesAbstract {
 
 
     }
+
 
     @Override
     public int getPositionX() {

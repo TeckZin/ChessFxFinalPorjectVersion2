@@ -14,7 +14,14 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
-
+/**
+ *
+ * @params the interactions bettwen all the peices with the board,
+ *          - legal moves
+ *          - taking peices
+ *          as well as the sorting of the peices from object
+ * @author Teck
+ */
 public class Interactions {
 
     private Rectangle rectangle;
@@ -64,10 +71,6 @@ public class Interactions {
 
         this.rectangle = actionObject;
         
-//        rectangle.setOnMousePressed(event -> preseed(event, actionObject));
-//        rectangle.setOnMouseDragged(event -> dragged(event, actionObject));
-//        rectangle.setOnMousePressed(event -> preseed(event, actionObject));
-
 
 
     }
@@ -110,8 +113,6 @@ public class Interactions {
                     }
 
                     dragged = true;
-//                    System.out.println(mouseEvent.getX());
-//                    System.out.println(mouseEvent.getY());
 
 
                 } catch (Exception e){
@@ -154,27 +155,24 @@ public class Interactions {
                             for (Object o : peicesOnBoard){
                                 int locaterX = getObjectTempX(o);
                                 int locaterY = getObjectTempY(o);
-                                if(locaterY == afterY && locaterX == afterX){
+
+
+                                if(locaterY == afterY && locaterX == afterX) {
                                     System.out.printf("Moving Object: <%d, %d> ObjectTarget: <%d, %d>%n"
-                                                    , x, y, locaterX, locaterY);
+                                            , x, y, locaterX, locaterY);
                                     Rectangle rectangle1 = getRectangleObject(o);
                                     System.out.println(o);
                                     peicesOnBoard.remove(o);
+
                                     peiceRemovel(rectangle1);
+
                                 }
 
-
-//                                if(locaterY == y && locaterX == x){
-//                                    movingPeices.add(o);
-//                                    System.out.println("moving");
-//                                    break;
-//
-//                                }
 
 
                             }
 
-//                            System.out.printf("Before: <x: %d, y: %d> After: <x: %d, y: %d>%n",x,y,afterX,afterY );
+
                             setObjectTempXY(afterX, afterY, stillObject);
 
                             changes = false;
@@ -189,7 +187,7 @@ public class Interactions {
 
 
 
-//                       isTaken(stillObject, actionObject);
+
                         dragged = false;
                     }
 
@@ -214,41 +212,7 @@ public class Interactions {
 
 
 
-//    public void preseed(MouseEvent event, Rectangle rectangle){
-//        int x = (int) rectangle.getX();
-//        int y = (int) rectangle.getY();
-//
-//        System.out.printf("\033[0;33m(x: %d, y: %d) --> \033[0;35mPressed \033[0m%n", x, y);
-//
-//
-//
-//    }
 
-//    public void dragged(MouseEvent event, Rectangle pawn){
-//        System.out.println("Dragged");
-//
-//    }
-//
-
-
-
-
-//    public void objectOnObject(){
-//        Rectangle rectangleAction = getRectangleObject(actionObject);
-//        Rectangle rectangleStill = getRectangleObject(stillObject);
-//        int actionX = (int) rectangleAction.getX();
-//        int actionY = (int) rectangleAction.getY();
-//        int stillX = (int) rectangleStill.getX();
-//        int stillY = (int) rectangleStill.getY();
-//
-//        if(actionX == stillX && stillY == actionY){
-//            sameLoaction = true;
-//            peiceRemovel(rectangleStill);
-//
-//        }
-//
-//
-//    }
 
     public void peiceRemovel(Rectangle rectangle){
 

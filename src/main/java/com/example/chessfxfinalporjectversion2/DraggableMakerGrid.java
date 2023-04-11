@@ -4,6 +4,14 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 
+/**
+ *
+ * @extend GridBase -- the layout of the baord
+ * @implements GRidInterface --- the const value for all the Grid and Layout
+ * @params make the snapping effect the peices by using rounding to the nearest 100;
+ * @author Teck
+ */
+
 public class DraggableMakerGrid extends GridBase implements GridInterface{
 
         private double mouseAnchorX;
@@ -31,6 +39,12 @@ public class DraggableMakerGrid extends GridBase implements GridInterface{
 
 
         }
+
+    /**
+     *
+     * @params the snapping effect of the peices
+     * @author Teck
+     */
 
     public void makeDraggable(PeicesComponents peicesComponents){
         Node node = peicesComponents.getRectangle();

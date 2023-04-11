@@ -30,6 +30,12 @@ public class MainController implements Initializable {
 
      private DraggableMakerGrid gridMaker2;
      //Creates the objects of the chess board, the pieces on the board, and the interactions
+     /**
+      *
+      * @params making the foundation fo the game, and start to generate the pieces
+      * @author Teck
+      */
+
      @Override
      public void initialize(URL url, ResourceBundle resourceBundle){
           sc = new Scanner(System.in);

@@ -4,11 +4,25 @@ import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 
+
+/**
+ *
+ * @params this is to make the peices to have a dragganle animations effect on the peices
+ * @author Teck
+ */
 public class DraggableMaker {
     private double mouseAnchorX;
     private double mouseAnchorY;
 
     private MouseEvent event;
+
+
+    /**
+     *
+     * @params find the mouse x and y-axis, find the differents between the mouse and node,
+     *          setting the node X and Y to the mouse.
+     * @author Teck
+     */
     public void makeDraggable(Node node){
 
         node.setOnMousePressed(mouseEvent -> {

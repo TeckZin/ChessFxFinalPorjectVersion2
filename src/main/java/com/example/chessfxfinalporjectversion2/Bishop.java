@@ -8,6 +8,10 @@ import javafx.scene.shape.Rectangle;
 
 public class Bishop extends PeicesAbstract {
 
+
+
+
+
     private Rectangle rectangle;
     private int positionX;
     private int positionY;
@@ -72,6 +76,8 @@ public class Bishop extends PeicesAbstract {
 
 
     }
+
+
 
     @Override
     public int getPositionX() {

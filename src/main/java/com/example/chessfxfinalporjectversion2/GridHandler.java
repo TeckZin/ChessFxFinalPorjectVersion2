@@ -8,6 +8,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+
+
 public class GridHandler extends GridBase implements GridInterface{
 
 
@@ -24,7 +26,11 @@ public class GridHandler extends GridBase implements GridInterface{
         System.out.println("\033[1;92mGENERATING BROAD\033[0m");
 
 
-
+        /**
+         *
+         * @params generating the actual board of the game
+         * @author Jagger
+         */
         for (int file = 0; file < getFile(); ++file) {
             for (int rank = 0; rank < getRank(); ++rank) {
                 boolean lightSqaureBoolean = (file + rank) % 2 != 0;
