@@ -39,8 +39,6 @@ public class Pawn extends PeicesAbstract {
 
     public Pawn(AnchorPane pane, int controlSize, int positionX, int positionY, DraggableMaker draggableMaker, DraggableMakerGrid draggableMakerGrid,int colorBit, Color color){
 
-
-
         setTempX(positionX);
         setTempY(positionY);
         setPositionX(positionX);
@@ -49,8 +47,6 @@ public class Pawn extends PeicesAbstract {
         setColor(color);
         this.colorBit = colorBit;
 
-
-
         if (colorBit == 1){
             colorType = "White";
 
@@ -58,15 +54,10 @@ public class Pawn extends PeicesAbstract {
             colorType = "Black";
         }
 
-
         this.type = "PawnPNG";
-
 
         PeicesComponents peicesComponents = new PeicesComponents(controlSize, positionX, positionY);
         this.rectangle = peicesComponents.getRectangle();
-
-
-//        peicesComponents.setImage(colorType, type);
 
         Image img = new Image(peicesComponents.getPath() + colorType + type + ".png");
         this.rectangle.setFill(new ImagePattern(img));
@@ -76,10 +67,6 @@ public class Pawn extends PeicesAbstract {
 
 
         pane.getChildren().add(rectangle);
-
-
-
-
 
     }
 
