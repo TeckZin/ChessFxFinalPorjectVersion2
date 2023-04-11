@@ -100,29 +100,32 @@ public class Interactions {
 
                 try{
                     System.out.println("Realsed");
-                    stillObject = (Object) target;
 
 
-                    int stillX = (int) Math.floor(mouseEvent.getX());
-                    int stillY = (int) Math.floor(mouseEvent.getY());
-                    System.out.println((stillX));
+
+                    int stillX = (int) Math.floor(mouseEvent.getX()/100)*100;
+                    int stillY = (int) Math.floor(mouseEvent.getY()/100)*100;
+                    System.out.println(stillX);
                     System.out.println(stillY);
 
 
 
+                    int index = 0;
                     if(dragged){
+
+
                         for(Object o : peicesOnBoard){
-                            Rectangle rec = (Rectangle) stillObject;
-                            int recX = (int) rec.getX();
-                            int recY = (int) rec.getY();
+
 
                             int tempX = getObjectTempX(o);
                             int tempY = getObjectTempY(o);
 
-                            if(recX == tempX && recY == tempY){
+                            if(stillX == tempX && stillY == tempY){
                                 setObjectTempXY(stillX, stillY, o);
                                 System.out.println(tempX);
                                 System.out.println(tempY);
+                                index = peicesOnBoard.indexOf(o);
+
 
 
                             }
@@ -132,7 +135,7 @@ public class Interactions {
                                 int tempX2 = getObjectTempX(o2);
                                 int tempY2 = getObjectTempY(o2);
 
-                                if(tempY2 == tempY && tempX2 == tempX){
+                                if(tempY2 == tempY && tempX2 == tempX && o2.equals(peicesOnBoard.get(index))){
                                     Rectangle removeRec = getRectangleObject(o2);
                                     peiceRemovel(removeRec);
                                 }
