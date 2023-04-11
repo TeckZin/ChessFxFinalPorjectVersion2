@@ -91,6 +91,7 @@ public class Interactions {
 
 
 
+
                 try{
                     System.out.println("Working");
                     startingX = (int) Math.floor(mouseEvent.getX()/100)*100;
@@ -147,10 +148,15 @@ public class Interactions {
                             int x = getObjectTempX(stillObject);
                             int y = getObjectTempY(stillObject);
 
+                            System.out.printf("Moving Object: <%d, %d> Target: <%d, %d>%n"
+                                                , x, y, afterX, afterY);
+
                             for (Object o : peicesOnBoard){
                                 int locaterX = getObjectTempX(o);
                                 int locaterY = getObjectTempY(o);
                                 if(locaterY == afterY && locaterX == afterX){
+                                    System.out.printf("Moving Object: <%d, %d> ObjectTarget: <%d, %d>%n"
+                                                    , x, y, locaterX, locaterY);
                                     Rectangle rectangle1 = getRectangleObject(o);
                                     System.out.println(o);
                                     peicesOnBoard.remove(o);
@@ -168,7 +174,7 @@ public class Interactions {
 
                             }
 
-                            System.out.printf("Before: <x: %d, y: %d> After: <x: %d, y: %d>%n",x,y,afterX,afterY );
+//                            System.out.printf("Before: <x: %d, y: %d> After: <x: %d, y: %d>%n",x,y,afterX,afterY );
                             setObjectTempXY(afterX, afterY, stillObject);
 
 
