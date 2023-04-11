@@ -72,6 +72,8 @@ public class PeicesHandler extends ImageView implements GridInterface {
 
     }
 
+    public PeicesHandler(){}
+
 
     // https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
     public void fenConverter(String FEN){
@@ -287,10 +289,7 @@ public class PeicesHandler extends ImageView implements GridInterface {
     public ArrayList<Object> getPeicesOnBoard() {
         return peicesOnBoard;
     }
-    public PeicesHandler(){
-        System.out.println("Admin Access");
 
-    }
 
 
     public void loadDefaulStartPosition(){
