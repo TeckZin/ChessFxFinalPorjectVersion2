@@ -6,7 +6,7 @@ import javafx.scene.shape.Rectangle;
 import java.util.concurrent.RecursiveAction;
 
 public abstract class PeicesAbstract {
-
+//List of setters and getters for position, temp position, size, name
     private Rectangle rectangle;
     private int positionX;
     private int positionY;
@@ -20,9 +20,7 @@ public abstract class PeicesAbstract {
 //    @FXML
 //    public abstract void generateImage();
 
-
     public abstract int getPositionX();
-
     public abstract int getPositionY();
 
     public abstract int getControlSize();
@@ -31,7 +29,6 @@ public abstract class PeicesAbstract {
     public abstract void setPositionY(int positionY);
 
     public abstract void setControlSize(int controlSize);
-
 
     public abstract Rectangle getRectangle();
     public abstract void setRectangle(Rectangle rectangle);
