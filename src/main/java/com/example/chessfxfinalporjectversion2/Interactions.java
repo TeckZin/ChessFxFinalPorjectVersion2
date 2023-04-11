@@ -177,6 +177,9 @@ public class Interactions {
 //                            System.out.printf("Before: <x: %d, y: %d> After: <x: %d, y: %d>%n",x,y,afterX,afterY );
                             setObjectTempXY(afterX, afterY, stillObject);
 
+                            changes = false;
+
+
 
                         }
 
