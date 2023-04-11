@@ -51,7 +51,7 @@ public class MainController implements Initializable {
 
 
 
-          Interactions interactions = new Interactions();
+          Interactions interactions = new Interactions(pane);
           interactions.addEventHandlers(pane, piecesOnBoard);
 
      }

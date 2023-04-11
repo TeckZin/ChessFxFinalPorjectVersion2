@@ -39,6 +39,14 @@ public class Interactions {
 
     private boolean dragged;
 
+    private boolean changes;
+
+    private int startingX = 1000;
+    private int startingY = 1000;
+
+    private int afterX = 1000;
+    private int afterY = 1000;
+
 
     public Interactions(AnchorPane pane, Object actionObject, Object stillObject){
             this.pane = pane;
@@ -64,12 +72,17 @@ public class Interactions {
 
     }
 
-    public Interactions(){}
+    public Interactions(AnchorPane pane){
+        this.pane = pane;
+
+    }
 
     public void addEventHandlers(AnchorPane pane, ArrayList<Object> peicesOnBoard){
         this.peicesOnBoard = peicesOnBoard;
 
+
         pane.setOnDragDetected(new EventHandler<MouseEvent>() {
+
             @Override
             public void handle(MouseEvent mouseEvent) {
 
@@ -80,7 +93,21 @@ public class Interactions {
 
                 try{
                     System.out.println("Working");
-                    actionObject = (Object) target;
+                    startingX = (int) Math.floor(mouseEvent.getX()/100)*100;
+                    startingY = (int) Math.floor(mouseEvent.getY()/100)*100;
+
+                    for(Object o : peicesOnBoard) {
+                        int tempXO = getObjectTempX(o);
+                        int tempYO = getObjectTempY(o);
+                        if(startingX == tempXO && startingY == tempYO) {
+                            changes = true;
+                            stillObject = o;
+                            break;
+                        }
+
+
+                    }
+
                     dragged = true;
 //                    System.out.println(mouseEvent.getX());
 //                    System.out.println(mouseEvent.getY());
@@ -99,51 +126,56 @@ public class Interactions {
                 EventTarget target = mouseEvent.getTarget();
 
                 try{
+
+
                     System.out.println("Realsed");
 
 
 
-                    int stillX = (int) Math.floor(mouseEvent.getX()/100)*100;
-                    int stillY = (int) Math.floor(mouseEvent.getY()/100)*100;
-                    System.out.println(stillX);
-                    System.out.println(stillY);
+                    afterX = (int) Math.floor(mouseEvent.getX()/100)*100;
+                    afterY = (int) Math.floor(mouseEvent.getY()/100)*100;
 
 
 
+
+
+                    ArrayList<Object> movingPeices = new ArrayList<Object>();
                     int index = 0;
                     if(dragged){
 
+                        if(changes){
+                            int x = getObjectTempX(stillObject);
+                            int y = getObjectTempY(stillObject);
 
-                        for(Object o : peicesOnBoard){
-
-
-                            int tempX = getObjectTempX(o);
-                            int tempY = getObjectTempY(o);
-
-                            if(stillX == tempX && stillY == tempY){
-                                setObjectTempXY(stillX, stillY, o);
-                                System.out.println(tempX);
-                                System.out.println(tempY);
-                                index = peicesOnBoard.indexOf(o);
-
-
-
-                            }
-
-
-                            for(Object o2 : peicesOnBoard){
-                                int tempX2 = getObjectTempX(o2);
-                                int tempY2 = getObjectTempY(o2);
-
-                                if(tempY2 == tempY && tempX2 == tempX && o2.equals(peicesOnBoard.get(index))){
-                                    Rectangle removeRec = getRectangleObject(o2);
-                                    peiceRemovel(removeRec);
+                            for (Object o : peicesOnBoard){
+                                int locaterX = getObjectTempX(o);
+                                int locaterY = getObjectTempY(o);
+                                if(locaterY == afterY && locaterX == afterX){
+                                    Rectangle rectangle1 = getRectangleObject(o);
+                                    System.out.println(o);
+                                    peicesOnBoard.remove(o);
+                                    peiceRemovel(rectangle1);
                                 }
 
+
+//                                if(locaterY == y && locaterX == x){
+//                                    movingPeices.add(o);
+//                                    System.out.println("moving");
+//                                    break;
+//
+//                                }
+
+
                             }
+
+                            System.out.printf("Before: <x: %d, y: %d> After: <x: %d, y: %d>%n",x,y,afterX,afterY );
+                            setObjectTempXY(afterX, afterY, stillObject);
 
 
                         }
+
+
+
 
 
 
@@ -212,6 +244,7 @@ public class Interactions {
     public void peiceRemovel(Rectangle rectangle){
 
         System.out.println("Object Remove");
+
         pane.getChildren().remove(rectangle);
 
 
