@@ -10,7 +10,7 @@ import java.nio.channels.Pipe;
 import java.util.ArrayList;
 /**
  *
- * @params adding the peices to the board (by calling the peices it self ) by using the FEN link
+ * @params adding the peices to the board (by calling the peices it-self ) by using the FEN link
  *          and adding it to an Obejct ArrayList for organisation
  * @author Teck
  */
